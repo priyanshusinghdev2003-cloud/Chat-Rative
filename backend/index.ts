@@ -1,1 +1,18 @@
-console.log("Hello via Bun!");
+import app from "./src/app";
+import { createServer } from "http";
+import { connectDB } from "./src/config/database";
+import dns from "dns";
+dns.setServers(["1.1.1.1", "8.8.8.8"]);
+
+const PORT = process.env.PORT || 3000;
+
+connectDB()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log("Server is running on PORT: http://localhost:", PORT);
+    });
+  })
+  .catch((error) => {
+    console.error("Failed to start server:", error);
+    process.exit(1);
+  });
