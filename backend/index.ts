@@ -4,12 +4,12 @@ import { connectDB } from "./src/config/database";
 import dns from "dns";
 dns.setServers(["1.1.1.1", "8.8.8.8"]);
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
-      console.log("Server is running on PORT: http://localhost:", PORT);
+      console.log(`Server is running on PORT: http://localhost:${PORT}`);
     });
   })
   .catch((error) => {
