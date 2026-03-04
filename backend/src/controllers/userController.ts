@@ -1,6 +1,6 @@
 import type { Response, NextFunction } from "express";
-import type { AuthRequest } from "../middleware/auth";
-import User from "../models/User";
+import type { AuthRequest } from "../middleware/auth.js";
+import User from "../models/User.js";
 
 export async function getUsers(
   req: AuthRequest,

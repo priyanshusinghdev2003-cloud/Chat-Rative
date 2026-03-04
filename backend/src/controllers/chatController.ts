@@ -1,7 +1,7 @@
 import type { NextFunction, Response } from "express";
-import type { AuthRequest } from "../middleware/auth";
+import type { AuthRequest } from "../middleware/auth.js";
 import { Types } from "mongoose";
-import Chat from "../models/Chat";
+import Chat from "../models/Chat.js";
 
 export async function getChats(
   req: AuthRequest,

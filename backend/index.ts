@@ -1,7 +1,7 @@
-import app from "./src/app";
+import app from "./src/app.js";
 import { createServer } from "http";
-import { connectDB } from "./src/config/database";
-import { initializeSocket } from "./src/utils/socket";
+import { connectDB } from "./src/config/database.js";
+import { initializeSocket } from "./src/utils/socket.js";
 
 const PORT = process.env.PORT || 8000;
 const httpServer = createServer(app);
