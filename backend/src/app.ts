@@ -6,6 +6,7 @@ import messageRoutes from "./routes/messageRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import { clerkMiddleware } from "@clerk/express";
 import { errorHandler } from "./middleware/errorHandler.js";
+import path from "path";
 
 const app = express();
 
@@ -34,5 +35,14 @@ app.use(errorHandler);
 app.get("/health", (req, res) => {
   res.json({ message: "Server is running!", status: "ok" });
 });
+
+// serve frontend in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "../../web/dist")));
+
+  app.get("/{*any}", (_, res) => {
+    res.sendFile(path.join(__dirname, "../../web/dist/index.html"));
+  });
+}
 
 export default app;
