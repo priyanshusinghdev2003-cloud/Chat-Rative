@@ -1,11 +1,11 @@
 import express from "express";
 import cors from "cors";
-import authRoutes from "./routes/authRoutes.ts";
-import chatRoutes from "./routes/chatRoutes.ts";
-import messageRoutes from "./routes/messageRoutes.ts";
-import userRoutes from "./routes/userRoutes.ts";
+import authRoutes from "./routes/authRoutes.js";
+import chatRoutes from "./routes/chatRoutes.js";
+import messageRoutes from "./routes/messageRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
 import { clerkMiddleware } from "@clerk/express";
-import { errorHandler } from "./middleware/errorHandler.ts";
+import { errorHandler } from "./middleware/errorHandler.js";
 
 const app = express();
 
