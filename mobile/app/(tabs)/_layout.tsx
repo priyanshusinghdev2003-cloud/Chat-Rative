@@ -21,7 +21,6 @@ export default function TabsLayout() {
         },
         tabBarActiveTintColor: "#F4A261",
         tabBarInactiveTintColor: "#6B6B70",
-        tabBarShowLabel: false,
         tabBarLabelStyle: { fontSize: 12, fontWeight: "600" },
       }}
     >
