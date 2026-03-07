@@ -4,6 +4,7 @@ import { ClerkProvider } from "@clerk/clerk-expo";
 import { StatusBar } from "expo-status-bar";
 import { tokenCache } from "@clerk/clerk-expo/token-cache";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import AuthSync from "@/components/AuthSync";
 
 const queryClient = new QueryClient();
 
@@ -11,6 +12,7 @@ export default function RootLayout() {
   return (
     <ClerkProvider tokenCache={tokenCache}>
       <QueryClientProvider client={queryClient}>
+        <AuthSync />
         <StatusBar style="light" />
         <Stack
           screenOptions={{
