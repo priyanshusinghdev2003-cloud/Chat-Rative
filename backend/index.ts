@@ -1,5 +1,5 @@
-import dns from "dns";
-dns.setServers(["1.1.1.1", "8.8.8.8"]);
+// import dns from "dns";
+// dns.setServers(["1.1.1.1", "8.8.8.8"]);
 import app from "./src/app.js";
 import { createServer } from "http";
 import { connectDB } from "./src/config/database.js";
